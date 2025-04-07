@@ -1,0 +1,419 @@
+<html class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Tailwind CSS CLI -->
+  <link href="./css/output.css" rel="stylesheet">
+
+  <!-- Leaflet.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Título da Página e Icon-->
+  <title>Las Vegas Tour</title>
+  <link rel="icon" type="image/png" href="./assets/logovegas.png">
+</head>
+
+<body class="bg-white text-black dark:bg-black dark:text-white relative">
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Área de Hover invisível (ativa a navbar ao passar o mouse no topo) -->
+    <div id="hover-area" class="absolute top-0 left-0 w-full h-16"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-gray-900/50 backdrop-blur-lg text-white p-4 opacity-0 invisible transition-all duration-300 z-50">
+
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo do Site -->
+            <a href="#" class="text-xl font-bold">Las Vegas Tour</a>
+
+            <!-- Links Nav-->
+            <div class="space-x-6 hidden md:flex">
+                <a href="#lasvegastextmap" class="hover:text-gray-300">Las Vegas</a>
+                <a href="#hospedagem" class="hover:text-gray-300">Hospedagem</a>
+                <a href="#turismo" class="hover:text-gray-300">Onde visitar</a>
+                <a href="#proximidades" class="hover:text-gray-300">Aventura</a>
+            </div>
+
+            <!-- Botão para alternar o tema -->
+            <button id="theme-toggle" 
+    class="p-2 rounded cursor-pointer transition-all duration-300 
+           focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-300">
+    <img src="assets/iconedarkmode.png" alt="Alternar Tema" class="w-8 h-8">
+</button>
+        </div>
+    </nav>
+
+    <!-- Imagem de fundo -->
+    <div class="h-screen w-full bg-cover bg-center flex items-center justify-center" style="background-image: url('./assets/vegastop.jpg');">
+    </div>
+
+    <br>
+        <section id="lasvegastextmap">
+      <div class="bg-white text-black dark:bg-black dark:text-white py-10">
+        <div class="max-w-screen-xl w-full px-4 mx-auto text-center">
+                <h1 class="text-4xl font-bold">Las Vegas</h1>
+                <br>
+                <p class="text-lg leading-relaxed ">
+                    Las Vegas, conhecida como a "Cidade do Pecado", é um dos destinos mais icônicos e vibrantes do mundo.
+                    Localizada no deserto de Nevada, nos Estados Unidos, a cidade brilha 24 horas por dia com seus famosos cassinos,
+                    hotéis luxuosos e uma vida noturna eletrizante. Além das apostas e espetáculos grandiosos,
+                    Las Vegas oferece uma variedade de atrações para todos os gostos.
+                    Desde incríveis shows de artistas renomados até passeios por paisagens deslumbrantes,
+                    como o Grand Canyon e o Vale do Fogo, a cidade surpreende turistas de todas as partes do mundo.
+                    Seja para quem busca diversão sem limites, experiências gastronômicas de alto nível ou até mesmo uma cerimônia de casamento inesquecível,
+                    Las Vegas é um destino que promete emoção e entretenimento a cada esquina.
+                </p>
+            </div>
+        </div>
+        
+        <div class="flex justify-center items-center">
+            <div id="map" class="w-full max-w-screen-xl h-[400px] rounded-lg shadow-lg z-10 mx-auto"></div>
+          <script>
+            // Inicializa o mapa no elemento "map" com as coordenadas de Las Vegas
+            var map = L.map('map').setView([36.1699, -115.1398], 13);
+          
+            // Adiciona um mapa base do OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '© OpenStreetMap'
+            }).addTo(map);
+          
+            // Adiciona um marcador para Las Vegas
+            L.marker([36.1699, -115.1398]).addTo(map)
+              .bindPopup("<b>Bem-vindo a Las Vegas!</b><br>Explore a cidade do entretenimento.")
+              .openPopup();
+          </script>
+          </section>
+
+<section id="hospedagem"></section>
+          <div class="bg-white text-black dark:bg-black dark:text-white py-10">
+            <div class="w-full max-w-screen-xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Hotéis</h2>
+        <br>
+        
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Hotel 1 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/caesarspalacebing.png" alt="Caesars Palace" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">Caesars Palace</h3>
+                        <p class="text-sm mt-1">O Caesars Palace é um dos hotéis mais icônicos de Las Vegas, localizado na famosa Las Vegas Strip.
+                             Inspirado na grandiosidade da Roma Antiga, o hotel oferece uma experiência luxuosa com sua arquitetura imponente,
+                              colunas clássicas e estátuas majestosas.</p>
+                    </div>
+        
+                    <!-- Hotel 2 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/the venetiann.png" alt="The Venetian" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">The Venetian</h3>
+                        <p class="text-sm mt-1">O The Venetian é um dos hotéis mais luxuosos e elegantes de Las Vegas,
+                             inspirado na charmosa cidade de Veneza, na Itália. Localizado na famosa Las Vegas Strip,
+                              ele se destaca por sua arquitetura impressionante, com réplicas dos canais venezianos,
+                               gôndolas autênticas e fachadas clássicas que transportam os visitantes para a Europa.</p>
+                    </div>
+        
+                    <!-- Hotel 3 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/bellagio.png" alt="Bellagio Hotel" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">Bellagio</h3>
+                        <p class="text-sm mt-1">O Bellagio é um dos hotéis mais luxuosos e emblemáticos de Las Vegas,
+                             conhecido por sua elegância sofisticada e pela famosa Fonte do Bellagio,
+                              que apresenta espetáculos de água sincronizados com música e luzes.
+                               Inspirado na cidade italiana de Bellagio, às margens do Lago de Como,
+                                o hotel combina requinte, conforto e entretenimento de alto nível.</p>
+                    </div>
+        
+                    <!-- Hotel 4 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/flamingovegas.png" alt="Hotel 4" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">Flamingo Hotel & Casino</h3>
+                        <p class="text-sm mt-1">O Flamingo Hotel & Casino é um dos hotéis mais clássicos e históricos de Las Vegas,
+                             inaugurado em 1946. Com seu estilo retrô e vibrante, ele combina o charme do passado com o entretenimento moderno,
+                              sendo um dos ícones da Las Vegas Strip.</p>
+                    </div>
+        
+                    <!-- Hotel 5 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/plaza2.png" alt="Plaza Hotel" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">Plaza Hotel</h3>
+                        <p class="text-sm mt-1">O Plaza Hotel & Casino é um dos hotéis mais tradicionais de Las Vegas,
+                             localizado no coração da Fremont Street, a histórica região da cidade. Inaugurado em 1971,
+                              ele mantém um estilo clássico e nostálgico, oferecendo uma autêntica experiência da Velha Las Vegas.</p>
+                    </div>
+        
+                    <!-- Hotel 6 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/linq.png" alt="The LINQ Hotel and Casino " class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">The LINQ Hotel and Casino </h3>
+                        <p class="text-sm mt-1">O The LINQ Hotel & Casino é um dos hotéis mais modernos e dinâmicos de Las Vegas,
+                             localizado no coração da Las Vegas Strip. Com um design contemporâneo e vibrante,
+                              ele atrai um público jovem e descontraído, oferecendo uma experiência cheia de tecnologia e entretenimento.</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+        </section> 
+
+<section id="turismo">
+        <div class="bg-white text-black dark:bg-black dark:text-white py-10">
+            <div class="w-full max-w-screen-xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Pontos Turísticos</h2>
+        <br>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Turismo 1 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/vegasstrip.png" alt="Las Vegas Strip" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">Las Vegas Strip</h3>
+                        <p class="text-sm mt-1"> A avenida mais famosa de Las Vegas, repleta de cassinos luxuosos,
+                             hotéis temáticos, restaurantes badalados e atrações icônicas.
+                              É o coração da vida noturna e do entretenimento da cidade.</p>
+                    </div>
+        
+                    <!-- Turismo 2 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/freemontvegas.png" alt="Freemont Street" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">Fremont Street Experience</h3>
+                        <p class="text-sm mt-1"> Uma rua coberta por um imenso teto de LED que exibe shows de luzes sincronizados com música.
+                             Além disso, há cassinos históricos, bares temáticos e uma tirolesa que atravessa a rua.</p>
+                    </div>
+        
+                    <!-- Turismo 3 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/fontesbelaggio.png" alt="Bellagio Fontes" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">Fontes do Bellagio</h3>
+                        <p class="text-sm mt-1">Um espetáculo gratuito em frente ao Bellagio Hotel,
+                             onde jatos de água dançam ao som de músicas famosas, criando um show visual impressionante</p>
+                    </div>
+        
+                    <!-- Turismo 4 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/veneziavegas.png" alt="The Venetian & Grand Canal Shoppes" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">The Venetian & Grand Canal Shoppes</h3>
+                        <p class="text-sm mt-1"> Um resort e shopping que recriam a atmosfera de Veneza,
+                             com canais artificiais onde é possível fazer passeios de gôndola guiados por gondoleiros cantores.</p>
+                    </div>
+        
+                    <!-- Turismo 5 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/highroller.png" alt="High Roller" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">High Roller</h3>
+                        <p class="text-sm mt-1"> Uma roda-gigante de 167 metros de altura,
+                             oferecendo vistas panorâmicas incríveis de Las Vegas,
+                              especialmente à noite, quando a cidade brilha com suas luzes.</p>
+                    </div>
+        
+                    <!-- Turismo 6 -->
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <img src="./assets/volcano.png" alt="Volcano" class="w-full h-40 object-cover rounded-md">
+                        <h3 class="text-xl font-semibold mt-2">The Mirage Volcano</h3>
+                        <p class="text-sm mt-1">Um vulcão artificial que entra em erupção todas as noites em frente ao The Mirage Hotel,
+                             proporcionando um show com fogo, efeitos especiais e música tribal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="proximidades">
+    <div class="bg-white text-black dark:bg-black dark:text-white py-10">
+        <div class="w-full max-w-screen-xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Aventura</h2>
+    <br>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Proximidades 1 -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img src="./assets/hooverdam.png" alt="Hoover Dam" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-2">Hoover Dam</h3>
+                    <p class="text-sm mt-1">Uma impressionante barragem construída no Rio Colorado,
+                         localizada na divisa entre Nevada e Arizona.
+                          Fica a apenas 45 minutos de Las Vegas e oferece vistas incríveis e passeios guiados pelas turbinas da usina.</p>
+                </div>
+    
+                <!-- Proximidades 2 -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img src="./assets/grandcanyon.png" alt="Grand Canyon" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-2">Grand Canyon</h3>
+                    <p class="text-sm mt-1"> Um dos maiores e mais famosos cânions do mundo,
+                         conhecido por suas formações rochosas e vistas espetaculares.
+                          A borda oeste (West Rim) fica a cerca de 2 horas de Las Vegas e é onde está a famosa Skywalk,
+                           uma passarela de vidro suspensa sobre o abismo.</p>
+                </div>
+    
+                <!-- Proximidades 3 -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img src="./assets/antelopecanyon.png" alt="Antelope Canyon e Horseshoe Bend" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-2">Antelope Canyon e Horseshoe Bend</h3>
+                    <p class="text-sm mt-1">O Antelope Canyon é um desfiladeiro estreito com paredes onduladas e iluminação natural surreal,
+                         ideal para fotos. Próximo dali está o Horseshoe Bend, uma curva em formato de ferradura no Rio Colorado.
+                          Ambos ficam em Page, Arizona, a cerca de 4 horas e meia de Las Vegas.</p>
+                </div>
+    
+                <!-- Proximidades 4 -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img src="./assets/valleyoffire.png" alt="Valley of Fire" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-2">Valley of Fire</h3>
+                    <p class="text-sm mt-1"> Parque estadual em Nevada, a apenas 1 hora de Las Vegas,
+                         famoso por suas formações rochosas vermelhas que parecem estar em chamas ao pôr do sol.
+                          É ideal para trilhas, fotos e contato com a natureza.</p>
+                </div>
+    
+                <!-- Proximidades 5 -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img src="./assets/deathvalley.png" alt="Death Valley" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-2">Death Valley</h3>
+                    <p class="text-sm mt-1">Um dos lugares mais quentes e secos do planeta, localizado na Califórnia,
+                         a cerca de 2 horas e meia de Las Vegas. É conhecido por suas paisagens únicas, salinas, dunas e montanhas coloridas.</p>
+                </div>
+    
+                <!-- Proximidades 6 -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img src="./assets/brycecanyon.png" alt="Bryce Canyon" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-2">Bryce Canyon</h3>
+                    <p class="text-sm mt-1">Um parque nacional em Utah com formações rochosas chamadas hoodoos (torres naturais).
+                         As trilhas entre os mirantes oferecem paisagens deslumbrantes. Fica a cerca de 4 horas de Las Vegas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Formulário de Satisfação -->
+<section id="satisfacao" class="bg-gray-100 dark:bg-black text-black dark:text-white py-12">
+    <div class="max-w-screen-md mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Sua opinião é importante!</h2>
+      <p class="text-center mb-8 text-sm md:text-base">Nos conte como foi sua experiência explorando nosso guia de Las Vegas.</p>
+  
+      <form id="form-satisfacao" class="bg-white dark:bg-neutral-900 p-6 rounded-lg shadow-lg space-y-4">
+        <div>
+          <label for="nome" class="block text-sm font-medium mb-1">Seu nome</label>
+          <input type="text" id="nome" name="nome" required placeholder="Digite seu nome" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+  
+        <div>
+          <label for="nota" class="block text-sm font-medium mb-1">Nota (1 a 5)</label>
+          <select id="nota" name="nota" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="" disabled selected>Escolha uma nota</option>
+            <option value="1">1 - Péssimo</option>
+            <option value="2">2 - Ruim</option>
+            <option value="3">3 - Regular</option>
+            <option value="4">4 - Bom</option>
+            <option value="5">5 - Excelente</option>
+          </select>
+        </div>
+  
+        <div>
+          <label for="comentario" class="block text-sm font-medium mb-1">Comentário</label>
+          <textarea id="comentario" name="comentario" rows="4" placeholder="Deixe seu comentário" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+  
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Enviar</button>
+      </form>
+  
+      <div id="mensagem-confirmacao" class="text-green-500 text-center mt-4 hidden">
+        Obrigado pela sua avaliação! 😊
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER e CONTATO -->
+  <footer class="bg-neutral-900 text-white py-8 mt-12">
+    <div class="max-w-screen-md mx-auto px-4 text-center space-y-3">
+      <h3 class="text-xl font-semibold">Las Vegas Tour</h3>
+      <p>
+        Contato: 
+        <a href="mailto:contato@vegasguia.com" class="text-blue-400 hover:underline">
+          contato@vegastour.com
+        </a>
+      </p>
+      <p class="text-sm text-gray-400">&copy; 2025 Las Vegas Tour. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  
+    <!-- FUNÇÕES PARA ROLAMENTO E NAVBAR -->
+    <script>
+        const navbar = document.getElementById("navbar");
+        const themeToggle = document.getElementById("theme-toggle");
+        const htmlElement = document.documentElement;
+        let timeoutId;
+
+        // Monitorar rolagem da página
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) { // Quando rolar 100px ou mais
+                navbar.classList.remove("opacity-0", "invisible");
+            } else {
+                navbar.classList.add("opacity-0", "invisible");
+            }
+        });
+
+        // Mostrar navbar ao passar o mouse na área de hover
+        const hoverArea = document.getElementById("hover-area");
+        hoverArea.addEventListener("mouseenter", () => {
+            navbar.classList.remove("opacity-0", "invisible");
+            if (timeoutId) clearTimeout(timeoutId); // Limpa qualquer timeout anterior
+        });
+
+        // Esconder navbar após um pequeno delay quando o mouse sair dela
+        navbar.addEventListener("mouseleave", () => {
+            timeoutId = setTimeout(() => {
+                navbar.classList.add("opacity-0", "invisible");
+            }, 300); // delay de 300ms
+        });
+
+        // Para garantir que a navbar continue visível enquanto o mouse estiver sobre ela
+        navbar.addEventListener("mouseenter", () => {
+            clearTimeout(timeoutId); // Limpa o timeout se o mouse ainda estiver sobre a navbar
+        });
+
+        // Função para alternar o tema
+        function toggleTheme() {
+            if (htmlElement.classList.contains("dark")) {
+                htmlElement.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            } else {
+                htmlElement.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+            }
+        }
+
+        // Verificar tema salvo no localStorage
+        if (localStorage.getItem("theme") === "dark") {
+            htmlElement.classList.add("dark");
+        }
+
+        // Evento de clique no botão
+        if (themeToggle) {
+            themeToggle.addEventListener("click", toggleTheme);
+        }
+    </script>
+
+<script>
+    //FORMULÁRIO DE SATISFAÇÃO
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("form-satisfacao");
+        const feedback = document.getElementById("mensagem-confirmacao");
+
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const nome = document.getElementById("nome").value;
+                const nota = document.getElementById("nota").value;
+                const comentario = document.getElementById("comentario").value;
+
+                console.log("Nome:", nome);
+                console.log("Nota:", nota);
+                console.log("Comentário:", comentario);
+
+                form.reset();
+                feedback.classList.remove("hidden");
+
+                setTimeout(() => {
+                    feedback.classList.add("hidden");
+                }, 4000);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

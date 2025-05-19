@@ -43,8 +43,17 @@ Este projeto teve como objetivo:
 
 ---
 
-## Como visualizar localmente
+## Como executar o projeto localmente
 
 1. Clone o repositório:
    ```bash
    git clone https://github.com/gmendeszz/LasVegasTour.git
+Acesse a pasta do projeto:
+
+cd LasVegasTour
+
+Instale as dependências:
+npm install
+
+Inicie o servidor de desenvolvimento:
+npm run dev

@@ -30,10 +30,10 @@ Este projeto teve como objetivo:
 
 ## Tecnologias Utilizadas
 
-- `HTML5` – estrutura semântica da página  
-- `Tailwind CSS` – estilização com classes utilitárias  
-- `JavaScript (Vanilla)` – lógica e interatividade  
-- `GitHub Pages` – hospedagem estática gratuita  
+- `HTML5` – Estrutura semântica da página  
+- `Tailwind CSS` – Estilização com classes utilitárias  
+- `JavaScript (Vanilla)` – Lógica e interatividade  
+- `GitHub Pages` – Hospedagem 
 
 ---
 

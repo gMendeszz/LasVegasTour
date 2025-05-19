@@ -1,32 +1,50 @@
-# 🌆 Guia Turístico de Las Vegas
+# Guia Turístico de Las Vegas
 
-Um site desenvolvido como projeto acadêmico, com o objetivo de apresentar as principais atrações turísticas de Las Vegas, utilizando apenas **HTML**, **CSS (Tailwind)** e **JavaScript puro**.
+Projeto desenvolvido como parte de um desafio acadêmico, com foco em construir um site informativo e visualmente atrativo sobre as principais atrações turísticas de **Las Vegas**. O site foi criado utilizando **HTML5**, **Tailwind CSS** e **JavaScript puro**, demonstrando domínio de tecnologias fundamentais do desenvolvimento web.
 
-
-**Link do site:** [Acessar no GitHub Pages](https://gmendeszz.github.io/LasVegasTour/)
-
----
-
-## ✨ Funcionalidades
-
-- Apresentação das principais atrações turísticas de Las Vegas
-- Layout responsivo usando Tailwind CSS
-- Galeria de imagens
-- Navegação entre seções
-- Informações úteis para turistas
-- Smooth utilizando Tailwind CSS
+**Acesse o site:** [Las Vegas Tour - GitHub Pages](https://gmendeszz.github.io/LasVegasTour/)
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## Funcionalidades
 
-- HTML5
-- Tailwind CSS
-- JavaScript (Vanilla)
-- GitHub Pages (para deploy)
+- Destaques das atrações mais famosas de Las Vegas  
+- Layout moderno e responsivo com **Tailwind CSS**  
+- Galeria interativa de imagens  
+- Navegação fluida entre seções com **scroll suave**  
+- Mapa interativo com localização das atrações  
+- Informações úteis e curiosidades para turistas  
 
 ---
 
-## 📚 Bibliotecas utilizadas
+## Aprendizados e Objetivos
 
--Leaflet (Mapa)
+Este projeto teve como objetivo:
+
+- Praticar a criação de interfaces sem o uso de frameworks JavaScript  
+- Aplicar conceitos de **responsividade**, **usabilidade** e **design visual** com Tailwind  
+- Integrar bibliotecas externas como o **Leaflet.js** para interatividade (mapas)  
+- Publicar e versionar um projeto completo utilizando **Git** e **GitHub Pages**  
+
+---
+
+## Tecnologias Utilizadas
+
+- `HTML5` – estrutura semântica da página  
+- `Tailwind CSS` – estilização com classes utilitárias  
+- `JavaScript (Vanilla)` – lógica e interatividade  
+- `GitHub Pages` – hospedagem estática gratuita  
+
+---
+
+## Bibliotecas Externas
+
+- [Leaflet.js](https://leafletjs.com/) – biblioteca para criação de mapas interativos  
+
+---
+
+## Como visualizar localmente
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/gmendeszz/LasVegasTour.git

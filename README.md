@@ -42,3 +42,24 @@ Este projeto teve como objetivo:
 - [Leaflet.js](https://leafletjs.com/) – biblioteca para criação de mapas interativos  
 
 ---
+
+## Compatibilidade
+
+Este projeto foi desenvolvido utilizando o **Tailwind CSS v4 (versão alpha)**, com foco em **navegadores modernos** que suportam as principais funcionalidades de CSS atuais, como:
+
+- Flexbox e Grid Layout
+- Variáveis CSS
+- Suporte total ao modo escuro (dark mode nativo)
+- Scroll suave (`scroll-behavior: smooth`)
+- Utilização de classes utilitárias modernas da nova versão do Tailwind
+
+Recomenda-se utilizar navegadores atualizados, como:
+
+- Google Chrome (versão 111+)
+- Microsoft Edge (versão 111+)
+- Mozilla Firefox (versão 110+)
+- Safari (versão 16+)
+
+> ⚠️ Navegadores legados, como Internet Explorer ou versões muito antigas de navegadores modernos, **podem não renderizar corretamente** partes do layout ou estilos do projeto devido ao uso de recursos recentes do CSS e da própria biblioteca Tailwind.
+
+Para melhor experiência, utilize sempre a versão mais recente do seu navegador.
